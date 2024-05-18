@@ -1,0 +1,38 @@
+#filter-dialog {
+    width: 30vw; 
+    font-weight: bolder;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#close-modal-btn{
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+}
+
+#close-modal-btn:hover{
+    cursor: pointer;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form{
+    display: flex;
+}
+
+.input-container{
+    margin: 2%;;
+}
+
+.input-container select{
+    width: 13vw;
+    margin-top: 2%;
+}

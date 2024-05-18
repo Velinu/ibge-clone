@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/dialog.css" />
   </head>
   <body>
     <header>
@@ -33,15 +34,35 @@
       </button>
     </header>
     <main>
-      <dialog open id="filter-dialog">
-        <form method="dialog">
-          <section style="display: flex">
-            <label for="notice-type-select">Tipo:</label>
-            <select id="notice-type-select"></select>
+      <dialog id="filter-dialog">
+        <div class="button-container">
+          <button id="close-modal-btn">X</button>
+        </div>
+        <form method="dialog" id="form-dialog">
+          <div class="container-form">
+            <div class="input-container">
+              <label for="notice-type-select">Tipo:</label>
+              <select id="notice-type-select"></select>
+            </div>
 
-            <label for="notice-qtd-select">Quantidade:</label>
-            <select id="notice-qtd-select"></select>
-          </section>
+            <div class="input-container">
+              <label for="notice-qtd-select">Quantidade:</label>
+              <select id="notice-qtd-select"></select>
+            </div>
+          </div>
+          <div>
+            <div class="container-form">
+              <div class="input-container">
+                <label for="notice-date-select">De:</label>
+                <input type="date" id="notice-date-start" />
+              </div>
+
+              <div class="input-container">
+                <label for="notice-qtd-select">Até:</label>
+                <input type="date" id="notice-date-end" />
+              </div>
+            </div>
+          </div>
           <menu>
             <button type="submit">Aplicar</button>
           </menu>
@@ -49,6 +70,7 @@
       </dialog>
     </main>
     <footer></footer>
-    <script src="script.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/modal.js"></script>
   </body>
 </html>
