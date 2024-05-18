@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Portal de Notícias de IBGE</h1>
+      <form action="">
+        <input
+          type="text"
+          name=""
+          id="search-input"
+          placeholder="Buscar notícia por termo"
+        />
+        <button id="submit-input" type="submit">🔍</button>
+      </form>
+      <button id="filter-btn">
+        <svg
+          width="20"
+          height="20"
+          fill="#f0f0f0"
+          viewBox="0 0 80 90"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+        </svg>
+      </button>
+    </header>
+    <main>
+      <dialog open id="filter-dialog">
+        <form method="dialog">
+          <section style="display: flex">
+            <label for="notice-type-select">Tipo:</label>
+            <select id="notice-type-select"></select>
+
+            <label for="notice-qtd-select">Quantidade:</label>
+            <select id="notice-qtd-select"></select>
+          </section>
+          <menu>
+            <button type="submit">Aplicar</button>
+          </menu>
+        </form>
+      </dialog>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
