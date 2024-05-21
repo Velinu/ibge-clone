@@ -1,6 +1,7 @@
 const filterBtn = document.querySelector("#filter-btn")
 const filterDialog = document.querySelector('#filter-dialog')
 const searchForm = document.querySelector("#search-form")
+const filterForm = document.querySelector("#form-dialog")
 const newslist = document.querySelector("#news-list")
 const searchParams = new URLSearchParams(window.location.search);
 
@@ -15,11 +16,21 @@ async function searchNews(params) {
     return data
 }
 
-searchForm.addEventListener('submit', async (e) => {
+searchForm.addEventListener('submit', (e) => {
     const formData = new FormData(e.target)
     const busca = formData.get("term")
     
     searchParams.set('busca', busca)
+})
+
+filterForm.addEventListener('submit', (e) => {
+    const formData = new FormData(e.target)
+    console.log(formData)
+    const de = formData.get("de");
+    const ate = formData.get("ate");
+    searchParams.set('de', de)
+    searchParams.set('ate', ate)
+    
 })
 
 async function getJsonData(url){

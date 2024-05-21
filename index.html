@@ -56,37 +56,18 @@
     <footer></footer>
 
     <dialog id="filter-dialog">
-      <div class="button-container">
-        <button id="close-modal-btn">X</button>
-      </div>
-      <form method="dialog" id="form-dialog">
-        <div class="container-form">
-          <div class="input-container">
-            <label for="notice-type-select">Tipo:</label>
-            <select id="notice-type-select"></select>
-          </div>
-
-          <div class="input-container">
-            <label for="notice-qtd-select">Quantidade:</label>
-            <select id="notice-qtd-select"></select>
-          </div>
+      <button id="close-modal-btn">X</button>
+      <form id="form-dialog">
+        <div class="data-container">
+          <label for="de">De:</label>
+          <input type="date" id="de" name="de" />
         </div>
-        <div>
-          <div class="container-form">
-            <div class="input-container">
-              <label for="notice-date-select">De:</label>
-              <input type="date" id="notice-date-start" />
-            </div>
 
-            <div class="input-container">
-              <label for="notice-qtd-select">Até:</label>
-              <input type="date" id="notice-date-end" />
-            </div>
-          </div>
+        <div class="data-container">
+          <label for="ate">Até:</label>
+          <input type="date" id="ate" name="ate" />
         </div>
-        <menu>
-          <button type="submit">Aplicar</button>
-        </menu>
+        <input type="submit" value="Filtrar" />
       </form>
     </dialog>
 
