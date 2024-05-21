@@ -12,8 +12,10 @@ body {
 
   main {
     background-color: #f0f0f0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
   }
-  
+
   footer {
     background-color: #4682b4;
     color: #fff;
