@@ -1,77 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="shortcut icon" href="#" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/dialog.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Portal de Notícias de IBGE</h1>
-      <form id="search-form">
-        <input
-          type="text"
-          name="busca"
-          id="search-input"
-          placeholder="Buscar notícia por termo"
-        />
-        <button id="submit-input" type="submit">🔍</button>
-      </form>
-      <button id="filter-btn">
-        <svg
-          width="20"
-          height="20"
-          fill="#f0f0f0"
-          viewBox="0 0 80 90"
-          focusable="false"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
-        </svg>
-      </button>
-    </header>
-    <main>
-      <div class="card-news">
-        <img src="#" />
-        <div class="news-detail-container">
-          <div id="name-descr-container">
-            <h2>Texto exemplo</h2>
-            <p>descricao</p>
-          </div>
-          <div class="date-type-conainer">
-            <p id="category">publi</p>
-            <p id="date">publi</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="shortcut icon" href="#" />
+  <link rel="stylesheet" href="/css/dialog.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Portal de Notícias de IBGE</h1>
+    <form id="search-form">
+      <input type="text" name="busca" id="search-input" placeholder="Buscar notícia por termo" />
+      <button id="submit-input" type="submit">🔍</button>
+      <dialog id="filter-dialog">
+        <div>
+        <div class="dialog-content">
+          <button id="close-modal-btn">X</button>
+          <div class="data-container">
+            <label for="de">De:</label>
+            <input type="date" id="de" name="de" />
           </div>
 
-          <button><a href="#">Leia mais</a></button>
+          <div class="data-container">
+            <label for="ate">Até:</label>
+            <input type="date" id="ate" name="ate" />
+          </div>
+          <input type="submit" value="Filtrar" />
         </div>
       </div>
-    </main>
+      </dialog>
+    </form>
+    <button id="filter-btn">
+      <svg width="20" height="20" fill="#f0f0f0" viewBox="0 0 80 90" focusable="false"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+      </svg>
+    </button>
+  </header>
+  <main>
+  </main>
 
-    <footer></footer>
+  <footer></footer>
 
-    <dialog id="filter-dialog">
-      <button id="close-modal-btn">X</button>
-      <form id="form-dialog">
-        <div class="data-container">
-          <label for="de">De:</label>
-          <input type="date" id="de" name="de" />
-        </div>
 
-        <div class="data-container">
-          <label for="ate">Até:</label>
-          <input type="date" id="ate" name="ate" />
-        </div>
-        <input type="submit" value="Filtrar" />
-      </form>
-    </dialog>
 
-    <script src="/js/header.js"></script>
-    <script src="/js/modal.js"></script>
-  </body>
+
+  <script src="/js/header.js"></script>
+  <script src="/js/modal.js"></script>
+</body>
+
 </html>
