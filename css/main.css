@@ -1,6 +1,5 @@
 main{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    width: 100vw;
 }
 
 ul{
@@ -12,6 +11,17 @@ ul{
 li{
     padding: none;
     display: flex;
+}
+
+.news-card{
+    width: 100ch;
+    margin: 2vh auto;
+    display: flex;
+}
+
+.news-card img{
+    margin-right: 2vw;
+    max-width: 20vw;
 }
 
 .news-detail-container{
@@ -27,10 +37,13 @@ li{
 }
 
 .news-detail-container a{
+    display: flex;
     grid-row: 3;
     background-color: rgb(216, 216, 216);
     text-align: center;
     text-decoration: none;
+    align-items: center;
+    justify-content: center;
     color: black;
     height: 4vh;
 }
