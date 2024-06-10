@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     filterDialog.close();
 
     if (!window.location.search) {
-      window.location.search = "busca=&tipo=release&qtd=5&de=&ate=&page=1";
+      window.location.search = "busca=&tipo=release&qtd=10&de=&ate=&page=1";
   }
     const urlParams = new URLSearchParams(window.location.search);
     const data = await searchNews(window.location.search);
