@@ -82,7 +82,7 @@ filterBtn.addEventListener("click", () => {
 });
 
 async function searchNews(params) {
-  let url = `http://servicodados.ibge.gov.br/api/v3/noticias/${params}`;
+  let url = `https://servicodados.ibge.gov.br/api/v3/noticias/${params}`;
   const data = await getJsonData(url);
   return data;
 }
