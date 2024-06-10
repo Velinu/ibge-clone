@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     addPagination(data, urlParams.get('page'), window.location.search);
     const main = document.querySelector("main");
     const ul = document.createElement("ul");
+    ul.className = 'news-list'
     main.appendChild(ul);
     data.items.forEach(async (e) => {
       const dias = diferencaData(e.data_publicacao);
@@ -57,6 +58,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         alert(window.location.search)
         window.location.reload();
       };
+      if (i == currentPage) {
+        button.className =  "selected-page";
+      }else{
+        button.className = "button-page";
+      }
       
       li.appendChild(button);
       pagination.appendChild(li);

@@ -13,9 +13,47 @@ body {
 
   #pagination{
     grid-column: 1;
-    background-color: #4682b4;
+    display: flex;
+    justify-content: center;
     text-align: end;
+    background-color: #f0f0f0;
+    padding: 2vh;
     grid-row: 3;
+    margin: 0;
+  }
+
+  .button-page:hover{
+    background-color: #4682b4!important;
+    color: white;
+  }
+
+  .selected-page{
+    width: 100%;
+    border: none;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4682b4!important;
+    color: white;
+  }
+
+
+  .button-page{
+    width: 100%;
+    border: none;
+    font-weight: bolder;
+    color: #4682b4;
+    border: 3px solid #4682b4;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  
+
+  #pagination li{
+    height: 4vh;
+    width: 3.5vw;
+    margin: 0 0.5vw;
   }
 
   main {
@@ -31,10 +69,12 @@ body {
     text-align: center;
     padding: 1rem;
     grid-row: 4;
+    max-height: 5vh;
   }
 
   header {
     grid-row: 1;
+    max-height: 15vh;
     background-color: #4682b4;
     color: #fff;
     padding: 1rem;
@@ -86,16 +126,12 @@ body {
     cursor: pointer;
 }
 
-
 .submit-filter-container{
     width: 100%;
     display: flex;
     justify-content: end;
 }
 
-
-
-  
 form{
     position: relative;
     grid-row: 2/3;
@@ -152,7 +188,10 @@ form{
     max-width:  100vw;
  }
  
- ul{
+ .news-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
      list-style: none;
      padding: 0;
      grid-column: 2;
@@ -164,7 +203,7 @@ form{
  }
  
  .news-card{
-     width: 100ch;
+     max-width: 100ch;
      margin: 2vh 0;
      display: flex;
  }
