@@ -1,5 +1,5 @@
 main{
-    width: 100vw;
+   max-width:  100vw;
 }
 
 ul{
@@ -15,7 +15,7 @@ li{
 
 .news-card{
     width: 100ch;
-    margin: 2vh auto;
+    margin: 2vh 0;
     display: flex;
 }
 

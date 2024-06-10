@@ -1,0 +1,50 @@
+
+.dialog-content{
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    width: 40vw;
+    justify-content: space-between;
+}
+
+#close-modal-btn{
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+}
+
+.type-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.de-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.de-container input,select{
+    width: 17vw;
+    height: 4vh;
+}
+
+#submit-filter{
+    height: 4vh;
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-modal-btn:hover{
+    cursor: pointer;
+}
+
+
+.submit-filter-container{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
