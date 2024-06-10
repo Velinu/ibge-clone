@@ -7,10 +7,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!window.location.search) {
       window.location.search = "busca=&tipo=release&qtd=5&de=&ate=&page=1";
   }
-    
+    const urlParams = new URLSearchParams(window.location.search);
     const data = await searchNews(window.location.search);
-    console.log(window.location.search)
-    addPagination(data, 5, window.location.search);
+    addPagination(data, urlParams.get('page'), window.location.search);
     const main = document.querySelector("main");
     const ul = document.createElement("ul");
     main.appendChild(ul);
@@ -40,12 +39,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   const addPagination = (data, currentPage, params) => {
+    console.log(currentPage)
     const urlParams = new URLSearchParams(params);
     const pagination = document.querySelector("#pagination");
     const totalPages = Math.ceil(data.totalPages / 10);
-    const startPage = Math.max(1, currentPage - 4);
-    const endPage = Math.min(totalPages, currentPage + 10);
-  
+    const startPage = currentPage - 5 > 0 ? currentPage - 5 : 1;
+    const endPage = startPage + 9 < totalPages ? startPage + 9 : totalPages;
+
     for (let i = startPage; i <= endPage; i++) {
       const li = document.createElement("li");
       const button = document.createElement("button");
@@ -54,9 +54,63 @@ document.addEventListener("DOMContentLoaded", async () => {
       button.onclick = () => {
         urlParams.set("page", i);
         window.location.search = urlParams.toString();
+        alert(window.location.search)
+        window.location.reload();
       };
       
       li.appendChild(button);
       pagination.appendChild(li);
     }
-  }
+}
+
+const filterBtn = document.querySelector("#filter-btn");
+const filterDialog = document.querySelector("#filter-dialog");
+const searchForm = document.querySelector("#search-form");
+const filterForm = document.querySelector("#form-dialog");
+const searchInput = document.querySelector("#search-input");
+const newslist = document.querySelector("#news-list");
+const searchParams = new URLSearchParams(window.location.search);
+const closeModalBtn = document.querySelector('#close-modal-btn')
+
+closeModalBtn.addEventListener('click', (e) => {
+  filterDialog.close();
+  e.preventDefault();
+})
+
+filterBtn.addEventListener("click", () => {
+  filterDialog.showModal(); 
+});
+
+async function searchNews(params) {
+  let url = `http://servicodados.ibge.gov.br/api/v3/noticias/${params}&qtd=10`;
+  const data = await getJsonData(url);
+  return data;
+}
+
+async function getJsonData(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+  return data;
+}
+
+const diferencaData = (data) => {
+  const dataAtual = new Date();
+  let sanatizeData = data.split(" ");
+  const data2 = sanatizeData[0].split("/");
+  const dataPublicacao = new Date(
+    data2[2],
+    data2[1] - 1,
+    data2[0]
+  );
+
+  //const dataPublicacao = new Date(data);
+  const diferenca = dataAtual - dataPublicacao;
+  const dias = diferenca / (1000 * 60 * 60 * 24);
+  return Math.floor(dias);
+};
+
+const gerarJsonImagens = (imagens) => {
+  const imagensJson = JSON.parse(imagens);
+  const img = `https://agenciadenoticias.ibge.gov.br/${imagensJson.image_intro}`
+  return img;
+};

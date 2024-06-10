@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="shortcut icon" href="#" />
-    <link rel="stylesheet" href="/css/dialog.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
@@ -23,44 +20,42 @@
         />
         <button id="submit-input" type="submit">🔍</button>
         <dialog id="filter-dialog">
-            <div class="dialog-content">
-              <div class="submit-filter-container">
-                <button id="close-modal-btn">X</button>
-              </div>
-              <div class="type-container">
-                <div class="de-container">
-                  <label for="tipo">Tipo</label>
-                  <select name="tipo" id="tipo">
-                    <option value="release">release</option>
-                    <option value="noticia">Notícia</option>
-                  </select>
-                </div>
-                <div class="de-container">
-                  <label for="qtd">Quantidade</label>
-                  <select name="qtd" id="qtd">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                  </select>
-                </div>
-              </div>
-              <div class="type-container">
-                <div class="de-container">
-                  <label for="de">De:</label>
-                  <input type="date" id="de" name="de" />
-                </div>
-
-                <div class="de-container">
-                  <label for="ate">Até:</label>
-                  <input type="date" id="ate" name="ate" />
-                </div>
-                
-              </div>
-              
-              <input type="submit" value="Filtrar" id="submit-filter"/>
-              
+          <div class="dialog-content">
+            <div class="submit-filter-container">
+              <button id="close-modal-btn">X</button>
             </div>
+            <div class="type-container">
+              <div class="de-container">
+                <label for="tipo">Tipo</label>
+                <select name="tipo" id="tipo">
+                  <option value="release">release</option>
+                  <option value="noticia">Notícia</option>
+                </select>
+              </div>
+              <div class="de-container">
+                <label for="qtd">Quantidade</label>
+                <select name="qtd" id="qtd">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+              </div>
+            </div>
+            <div class="type-container">
+              <div class="de-container">
+                <label for="de">De:</label>
+                <input type="date" id="de" name="de" />
+              </div>
+
+              <div class="de-container">
+                <label for="ate">Até:</label>
+                <input type="date" id="ate" name="ate" />
+              </div>
+            </div>
+
+            <input type="submit" value="Filtrar" id="submit-filter" />
+          </div>
         </dialog>
       </form>
       <div class="filter-btn-container">
@@ -80,10 +75,9 @@
     </header>
     <main></main>
 
-    <ul id="pagination">  </ul>
+    <ul id="pagination"></ul>
     <footer></footer>
 
-    <script src="/js/header.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
