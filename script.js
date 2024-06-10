@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   const addPagination = (data, currentPage, params) => {
-    console.log(currentPage)
     const urlParams = new URLSearchParams(params);
     const pagination = document.querySelector("#pagination");
     const totalPages = Math.ceil(data.totalPages / 10);
@@ -55,7 +54,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       button.onclick = () => {
         urlParams.set("page", i);
         window.location.search = urlParams.toString();
-        alert(window.location.search)
         window.location.reload();
       };
       if (i == currentPage) {
