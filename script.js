@@ -2,6 +2,7 @@
 
 //window.location.search = "busca=&tipo=release&qtd=5&de=&ate=";
 document.addEventListener("DOMContentLoaded", async () => {
+  alert(window.location.search)
     filterDialog.close();
 
     if (!window.location.search) {
